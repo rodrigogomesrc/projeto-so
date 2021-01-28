@@ -1,16 +1,16 @@
-## Trabalho 1.1 - FORK
+# Trabalho 1.1 - FORK
 
-### Sistemas Operacionais
+## Sistemas Operacionais
 
-## Integrantes
+### Integrantes
 
 - João Paulo Gomes Siqueira
 - Rodrigo Gomes da Rocha
 
 
-## Como compilar
+### Como compilar
 
 
-## Como executar
+### Como executar
 
 
