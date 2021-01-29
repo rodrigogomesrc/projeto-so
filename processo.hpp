@@ -2,6 +2,8 @@
 #include <string>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <ctime>
+
 using namespace std;
 
 class Processo {

@@ -1,5 +1,4 @@
-# include "processo.hpp"
-#include <ctime>
+#include "processo.hpp"
 
 string Processo::getTempo(time_t tempo){
 
@@ -9,8 +8,8 @@ string Processo::getTempo(time_t tempo){
 	string seg = to_string(local.tm_sec);
 	return hora + ":" + min + ":" + seg;
 
-
 }
+
 void Processo::executar() {
 	//pai
 	nasc = time(0);
@@ -18,67 +17,82 @@ void Processo::executar() {
 	pid_t pid;
 	sleep(14);
 
-	cout << "pai criando filho1 aos 14: " << getTempo(time(0)) << endl; 
+	cout << "Pai criando Filho 1 aos 14 anos: " << getTempo(time(0)) << endl; 
 	pid = fork();
+
 	if (pid < 0){
 		cout << "erro" << endl;
-	}else if(pid == 0){
+
+	} else if(pid == 0){
 		//filho 1
 		nasc = time(0);
 		sleep(12);
-		cout << "Pai é avô aos 26 do primeiro filho: "  << getTempo(time(0)) << endl;
+		cout << "Pai é avô aos 26 anos do primeiro filho: "  << getTempo(time(0)) << endl;
 		pid = fork();
+
 		if(pid < 0){
 			cout << "erro" << endl;
-		}else if(pid == 0){
+
+		} else if(pid == 0){
 			//neto1
 			nasc = time(0);
 			sleep(12);
 			morte = time(0);
-			cout << "neto 1 morre | nascimento: " << getTempo(nasc) << " morte: " << getTempo(morte)  << " vida: " << to_string(morte - nasc)  << endl;
+			cout << "Neto 1 morre | Nascimento: " << getTempo(nasc) << " Morte: " << getTempo(morte)  
+			<< " Vida: " << to_string(morte - nasc)  << " anos" << endl;
 			exit(0);
 
 
-		}else{
+		} else {
 			//filho1
 			sleep(18);
 			morte = time(0);
-			cout << "filho 1 morre | nascimento: " << getTempo(nasc) << " morte: " << getTempo(morte)  << " vida: " << to_string(morte - nasc)  << endl;
+			cout << "Filho 1 morre | Nascimento: " << getTempo(nasc) << " Morte: " << getTempo(morte)  
+			<< " Vida: " << to_string(morte - nasc)  << " anos" << endl;
 			exit(0);
 		}
-	}else{
+
+	} else {
 		// pai
 		sleep(2);
-		cout << "pai criando filho2 aos 16: " << getTempo(time(0)) << endl; 
+		cout << "Pai criando Filho 2 aos 16 anos: " << getTempo(time(0)) << endl; 
 		pid = fork();
 		if(pid < 0){
 			cout << "erro";
-		}else if(pid == 0 ){
+
+		} else if(pid == 0 ){
 			//filho2
 			nasc = time(0);
 			sleep(14);
-			cout << "Pai é avô aos 30 do segundo filho: "  << getTempo(time(0)) << endl;
+			cout << "Pai é avô aos 30 anos do segundo filho: "  << getTempo(time(0)) << endl;
 			pid = fork();
+
 			if(pid < 0){
 				cout << "erro" << endl;
-			}else if(pid == 0){
+
+			} else if(pid == 0){
 				//neto2
 				nasc = time(0);
 				sleep(18);
 				morte = time(0);
-				cout << "neto 2 morre | " << getTempo(nasc) << " morte: " << getTempo(morte)  << " vida: " << to_string(morte - nasc)  << endl;
-			}else{
+				cout << "Neto 2 morre | " << getTempo(nasc) << " Morte: " << getTempo(morte)  
+				<< " Vida: " << to_string(morte - nasc)  << " anos" << endl;
+
+			} else {
 				//filho2
 				sleep(16);
 				morte = time(0);
-				cout << "filho 2 morre | nascimento: " << getTempo(nasc) << " morte: " << getTempo(morte)  << " vida: " << to_string(morte - nasc)  << endl;
+				cout << "Filho 2 morre | Nascimento: " << getTempo(nasc) << " Morte: " 
+				<< getTempo(morte)  << " Vida: " << to_string(morte - nasc)  << " anos" << endl;
 				exit(0);
 			}
-		}else{
+
+		} else { 
 			//pai
 			sleep(44);
 			morte = time(0);
-			cout << "pai morre | nascimento: " << getTempo(nasc) << " morte: " << getTempo(morte) << " vida: " << to_string(morte - nasc) << endl;
+			cout << "Pai morre | Nascimento: " << getTempo(nasc) << " Morte: " << getTempo(morte) 
+			<< " Vida: " << to_string(morte - nasc)  << " anos" << endl;
 			exit(0);
 		}
 
