@@ -9,6 +9,7 @@ class Processo {
 	public:
 
 		void executar();
-		string getTempo();
-	 	string nasc;
+		string getTempo(time_t tempo);
+	 	time_t nasc;
+		 time_t morte;
 };
