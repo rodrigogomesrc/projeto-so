@@ -45,6 +45,7 @@ void Processo::executar() {
 			exit(0);
 		}
 	}else{
+		// pai
 		sleep(2);
 		cout << "pai criando filho2 aos 16: " << getTempo() << endl; 
 		pid = fork();
