@@ -14,6 +14,7 @@
 Para o programa, foram usadas as seguintes versões de compilador e sistema operacional:
 
 Sistema operacional: Ubuntu 20.04.1 LTS
+
 Compilador: g++ 9.3.0
 
 Antes de executar, é necessário compilar o programa.
